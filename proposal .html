@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Divya ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 3.2rem;
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .heart {
+            font-size: 6rem;
+            animation: heartbeat 1.2s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: #fff;
+            color: #ff4d6d;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff4d6d;
+            color: #fff;
+        }
+        #message {
+            margin-top: 50px;
+            font-size: 2rem;
+            display: none;
+            animation: fadeIn 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Divya ❤️</h1>
+    <div class="heart">💖</div>
+    <p style="font-size: 1.5rem;">I want to tell you something special...</p>
+
+    <button class="btn" onclick="showMessage()">Click Here 💌</button>
+
+    <p id="message">Will You Be Mine Forever? 💕🌙</p>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+    <div id="proposal" style="display:none; margin-top:40px;">
+        <p style="font-size:2rem; font-weight:bold;">Do You Accept My Love? 💞</p>
+        <button class="btn" onclick="accepted()">Yes 😍</button>
+        <button class="btn" id="noBtn" onmouseover="moveNo()">No 😜</button>
+        <p id="yesMessage" style="display:none; font-size:2.5rem; margin-top:30px;">Yayyy! You said Yes! 💘🌹<br>Divya + You = Forever 💑✨</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('proposal').style.display = 'block';
+        }
+        function moveNo(){
+            var noBtn = document.getElementById('noBtn');
+            var x = Math.random() * window.innerWidth - 100;
+            var y = Math.random() * window.innerHeight - 100;
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+        function accepted(){
+            document.getElementById('yesMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
